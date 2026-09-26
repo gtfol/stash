@@ -133,10 +133,10 @@ final class StashUITests: XCTestCase {
         app.staticTexts.matching(NSPredicate(format: "label == %@", label)).firstMatch
     }
 
-    /// The destructive button in a confirmation dialog, wherever iOS presents it.
+    /// The destructive button in a confirmation alert.
     @MainActor private func confirmButton(_ app: XCUIApplication, _ label: String) -> XCUIElement {
-        let inSheet = app.sheets.buttons.matching(NSPredicate(format: "label == %@", label)).firstMatch
-        if inSheet.exists { return inSheet }
+        let inAlert = app.alerts.buttons.matching(NSPredicate(format: "label == %@", label)).firstMatch
+        if inAlert.exists { return inAlert }
         return app.buttons.matching(NSPredicate(format: "label == %@", label)).allElementsBoundByIndex.last ?? button(app, label)
     }
 

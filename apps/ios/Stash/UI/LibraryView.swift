@@ -39,7 +39,7 @@ struct LibraryView: View {
             }
         }
         .sheet(isPresented: $adding) { AddLinkView(model: model) }
-        .confirmationDialog("delete this link?", isPresented: isConfirmingDelete, titleVisibility: .visible, presenting: confirmingDelete) { record in
+        .alert("delete this link?", isPresented: isConfirmingDelete, presenting: confirmingDelete) { record in
             Button("delete", role: .destructive) { model.delete(record.id) }
             Button("cancel", role: .cancel) {}
         } message: { record in

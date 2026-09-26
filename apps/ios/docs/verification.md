@@ -24,7 +24,7 @@ Nothing here has run on a physical iPhone yet. Everything below ran on GitHub Ac
 
 ### Rendered screens
 
-Screenshots from the UI tests were reviewed at 1x: the dark library with the first-launch article (“Nature · archive.ph · Sep 26”, an “n” tile), details, the add sheet refusing `ftp`, search with no matches, the delete confirmation, and the enabled **Paste** control (light, with black text) saving a clipboard link. The simulator's network reached archive.ph, which refused the preview request as expected (“this site doesn’t allow previews.”); the known title, source, author, and date stayed. They led to three fixes: list hairlines now start at the gutter, only between items; the delete confirmation's iOS 26 popover points at **delete link**; and the blocked-site note no longer suggests editing a title the item already has.
+Screenshots from the UI tests were reviewed at 1x: the dark library with the first-launch article (“Nature · archive.ph · Sep 26”, an “n” tile), details, the add sheet refusing `ftp`, search with no matches, the delete confirmation, and the enabled **Paste** control (light, with black text) saving a clipboard link. The simulator's network reached archive.ph, which refused the preview request as expected (“this site doesn’t allow previews.”); the known title, source, author, and date stayed. They led to three fixes: list hairlines now start at the gutter, only between items; deleting now asks with an alert, because iOS 26 shows a confirmation dialog as a popover anchored to its source view, which floated from the top of the details screen and, once anchored to the button, didn't reliably appear; and the blocked-site note no longer suggests editing a title the item already has.
 
 ### Not verified
 

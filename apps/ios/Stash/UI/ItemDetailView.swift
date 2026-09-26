@@ -62,8 +62,9 @@ struct ItemDetailView: View {
                 Button("delete link", role: .destructive) { confirmingDelete = true }
                     .foregroundStyle(StashStyle.error)
                     .frame(minHeight: StashStyle.touchTarget)
-                    // Attached here so the iOS 26 popover points at the button that asked.
-                    .confirmationDialog("delete this link?", isPresented: $confirmingDelete, titleVisibility: .visible) {
+                    // An alert rather than a confirmation dialog: iOS 26 turns dialogs into popovers
+                    // anchored to their source, which can land far from this button or not show.
+                    .alert("delete this link?", isPresented: $confirmingDelete) {
                         Button("delete", role: .destructive, action: delete)
                         Button("cancel", role: .cancel) {}
                     } message: {
