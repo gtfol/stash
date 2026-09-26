@@ -28,7 +28,7 @@ struct PasteLinkButton: UIViewRepresentable {
         private let control: UIPasteControl
 
         override init(frame: CGRect) {
-            var configuration = UIPasteControl.Configuration()
+            let configuration = UIPasteControl.Configuration()
             configuration.displayMode = .iconAndLabel
             configuration.cornerStyle = .fixed
             configuration.cornerRadius = 2

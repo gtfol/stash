@@ -41,6 +41,23 @@ jobs:
           mkdir -p Screenshots
           if [ -d TestResults.xcresult ]; then xcrun xcresulttool export attachments --path TestResults.xcresult --output-path Screenshots; fi
           swift scripts/make-icon.swift Screenshots/AppIcon-rendered.png
+      - name: Print screenshots for review
+        if: always()
+        # Downscaled JPEGs as base64 between markers, readable from the job log.
+        run: |
+          [ -f Screenshots/manifest.json ] && cat Screenshots/manifest.json
+          mkdir -p Review
+          for file in Screenshots/*.png Screenshots/*.jpg Screenshots/*.jpeg; do
+            [ -f "$file" ] || continue
+            name=$(basename "$file")
+            if [ "$name" = "AppIcon-rendered.png" ]; then cp "$file" "Review/$name"; else sips -Z 900 -s format jpeg -s formatOptions 70 "$file" --out "Review/${name%.*}.jpg" >/dev/null; fi
+          done
+          for file in Review/*; do
+            [ -f "$file" ] || continue
+            echo "=== BEGIN $(basename "$file")"
+            base64 -i "$file" -b 76
+            echo "=== END $(basename "$file")"
+          done
       - name: Upload screenshots
         if: always()
         uses: actions/upload-artifact@v7
