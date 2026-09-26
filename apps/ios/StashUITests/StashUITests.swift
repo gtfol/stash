@@ -31,6 +31,7 @@ final class StashUITests: XCTestCase {
         button(app, "type a link").tap()
         let field = app.textFields["link field"]
         XCTAssertTrue(field.waitForExistence(timeout: 5))
+        field.tap()
         field.typeText("ftp://files.example.com/report.pdf")
         app.buttons["save link"].tap()
         XCTAssertTrue(text(app, "stash saves http and https links, not ftp links. nothing was saved.").waitForExistence(timeout: 5))
@@ -46,6 +47,7 @@ final class StashUITests: XCTestCase {
         // Saving the same page again keeps one item.
         button(app, "type a link").tap()
         XCTAssertTrue(field.waitForExistence(timeout: 5))
+        field.tap()
         field.typeText("https://www.example.com/stash-ui-test/?utm_source=ui-test")
         app.buttons["save link"].tap()
         XCTAssertTrue(text(app, "already saved. moved to the top.").waitForExistence(timeout: 5))

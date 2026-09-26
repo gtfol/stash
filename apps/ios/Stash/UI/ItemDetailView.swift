@@ -89,6 +89,7 @@ struct ItemDetailView: View {
                     .padding(.vertical, 4)
                     .overlay(alignment: .bottom) { Hairline() }
                     .accessibilityIdentifier("title field")
+                    .onAppear { titleFocused = true }
                     .onChange(of: draft) { _, value in
                         // Return ends editing; titles are one line.
                         if value.contains("\n") { saveTitle(record, value.replacingOccurrences(of: "\n", with: " ")) }
@@ -112,7 +113,6 @@ struct ItemDetailView: View {
                 Button("edit title") {
                     draft = record.customTitle ?? record.title
                     editing = true
-                    titleFocused = true
                 }
                 .font(StashStyle.caption)
                 .foregroundStyle(StashStyle.secondary)
@@ -167,10 +167,7 @@ struct ItemDetailView: View {
         return VStack(alignment: .leading, spacing: 4) {
             label("details")
             if fetching {
-                HStack(spacing: 8) {
-                    ProgressView().controlSize(.small)
-                    Text("fetching details…")
-                }
+                Text("fetching details…")
             } else if let failure = record.metadataFailure {
                 Text(failure.message)
             } else if record.metadataStatus == .fetched {

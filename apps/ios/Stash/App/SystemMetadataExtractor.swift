@@ -39,8 +39,17 @@ enum LinkPresentationTitle {
         } onCancel: {
             Task { @MainActor in handle.provider.cancel() }
         }
-        guard let title = LinkMetadata.text(title, limit: 300), !HTMLMetadataParser.isInterstitialTitle(title) else { return nil }
+        guard let title = LinkMetadata.text(title, limit: 300), !HTMLMetadataParser.isInterstitialTitle(title),
+              !isJustTheSiteName(title, of: url) else { return nil }
         return title
+    }
+
+    /// "archive.ph" or "Archive" names the site, not the page.
+    static func isJustTheSiteName(_ title: String, of url: URL) -> Bool {
+        guard let host = URLComponents(url: url, resolvingAgainstBaseURL: false)?.host else { return false }
+        let site = WebLink.displayHost(host)
+        let name = title.lowercased()
+        return name == site || name == site.split(separator: ".").first.map(String.init)
     }
 
     // Lets the cancellation handler reach the provider; it is only used on the main actor.

@@ -12,7 +12,7 @@ struct ItemRow: View {
         HStack(alignment: .center, spacing: 4) {
             Button(action: open) {
                 HStack(alignment: .top, spacing: 12) {
-                    LinkThumbnail(imageURL: record.page.imageURL, host: record.host)
+                    LinkThumbnail(imageURL: record.page.imageURL, label: record.source ?? record.host)
                     VStack(alignment: .leading, spacing: 6) {
                         Text(record.title)
                             .font(StashStyle.itemTitle)

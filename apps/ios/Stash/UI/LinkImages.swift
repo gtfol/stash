@@ -1,10 +1,10 @@
 import SwiftUI
 
 /// A square preview for a list row. Until an image loads, or if it can't, the tile shows the
-/// site's first letter, so a row is never blank.
+/// first letter of the source (or domain), so a row is never blank.
 struct LinkThumbnail: View {
     let imageURL: String?
-    let host: String
+    let label: String
     var size: CGFloat = 56
     @Environment(\.displayScale) private var displayScale
     @State private var image: CGImage?
@@ -15,7 +15,7 @@ struct LinkThumbnail: View {
             if let image {
                 Image(decorative: image, scale: 1).resizable().scaledToFill()
             } else {
-                Text(host.first.map { String($0).lowercased() } ?? "·")
+                Text(label.first.map { String($0).lowercased() } ?? "·")
                     .font(.custom("Lato-Regular", fixedSize: size * 0.42))
                     .foregroundStyle(StashStyle.secondary)
             }
