@@ -41,23 +41,6 @@ jobs:
           mkdir -p Screenshots
           if [ -d TestResults.xcresult ]; then xcrun xcresulttool export attachments --path TestResults.xcresult --output-path Screenshots; fi
           swift scripts/make-icon.swift Screenshots/AppIcon-rendered.png
-      - name: Print screenshots for review
-        if: always()
-        # Downscaled JPEGs as base64 between markers, readable from the job log.
-        run: |
-          [ -f Screenshots/manifest.json ] && cat Screenshots/manifest.json
-          mkdir -p Review
-          for file in Screenshots/*.png Screenshots/*.jpg Screenshots/*.jpeg; do
-            [ -f "$file" ] || continue
-            name=$(basename "$file")
-            if [ "$name" = "AppIcon-rendered.png" ]; then cp "$file" "Review/$name"; else sips -Z 900 -s format jpeg -s formatOptions 70 "$file" --out "Review/${name%.*}.jpg" >/dev/null; fi
-          done
-          for file in Review/*; do
-            [ -f "$file" ] || continue
-            echo "=== BEGIN $(basename "$file")"
-            base64 -i "$file" -b 76
-            echo "=== END $(basename "$file")"
-          done
       - name: Upload screenshots
         if: always()
         uses: actions/upload-artifact@v7
@@ -72,3 +55,52 @@ jobs:
           name: ios-test-results
           path: apps/ios/TestResults.xcresult
           if-no-files-found: ignore
+      - name: Print screenshots for review
+        if: always()
+        # Small quantized PNGs as base64 between markers, most important last, so they can be read
+        # from the end of this log. Also compares the CoreText icon with the committed one.
+        run: |
+          python3 -m venv /tmp/review >/dev/null && /tmp/review/bin/pip install -q pillow
+          /tmp/review/bin/python - <<'PY'
+          import base64, io, json, pathlib
+          from PIL import Image, ImageChops, ImageStat
+          root = pathlib.Path('Screenshots')
+          icon, committed = root / 'AppIcon-rendered.png', pathlib.Path('Stash/Assets.xcassets/AppIcon.appiconset/AppIcon.png')
+          if icon.exists():
+              a, b = Image.open(icon).convert('L'), Image.open(committed).convert('L')
+              ink = lambda im: im.point(lambda v: 255 if v > 128 else 0).getbbox()
+              print('icon sizes', a.size, b.size, 'mean diff', round(ImageStat.Stat(ImageChops.difference(a, b)).mean[0], 3),
+                    'ink rendered', ink(a), 'ink committed', ink(b))
+          names = {}
+          def walk(node):
+              if isinstance(node, dict):
+                  if 'exportedFileName' in node: names[node['exportedFileName']] = node.get('suggestedHumanReadableName', node['exportedFileName'])
+                  for value in node.values(): walk(value)
+              elif isinstance(node, list):
+                  for value in node: walk(value)
+          if (root / 'manifest.json').exists(): walk(json.load(open(root / 'manifest.json')))
+          shots = sorted(((names.get(p.name, p.name), p) for p in root.iterdir() if p.suffix.lower() in ('.png', '.jpg', '.jpeg') and p.name != icon.name), reverse=True)
+          for name, path in shots:
+              image = Image.open(path).convert('RGB')
+              image.thumbnail((402, 900))
+              buffer = io.BytesIO()
+              image.quantize(colors=24).save(buffer, 'PNG', optimize=True)
+              data = base64.b64encode(buffer.getvalue()).decode()
+              print(f'=== BEGIN {name} {image.size} {len(buffer.getvalue())} bytes')
+              for i in range(0, len(data), 100): print(data[i:i + 100])
+              print(f'=== END {name}')
+          PY
+      - name: Test summary
+        if: always()
+        run: |
+          [ -d TestResults.xcresult ] || exit 0
+          xcrun xcresulttool get test-results summary --path TestResults.xcresult --compact
+          xcrun xcresulttool get test-results tests --path TestResults.xcresult --compact | python3 -c '
+          import json, sys
+          def walk(node, suite=""):
+              if node.get("nodeType") == "Test Case":
+                  print(node.get("result"), suite + "/" + node.get("name", ""), node.get("duration", ""))
+              for child in node.get("children", []):
+                  walk(child, node.get("name", suite) if node.get("nodeType") == "Test Suite" else suite)
+          for node in json.load(sys.stdin).get("testNodes", []): walk(node)
+          '
