@@ -2,7 +2,7 @@
 
 ## Web app and sync — September 26, 2026
 
-Nothing here has run against the real stash Supabase project, Google sign-in, or Vercel yet. Everything below ran in the development container (Node 22, Postgres 16.13, Chromium 141 from Playwright 1.56.1) and in GitHub Actions (Node 24, Postgres 16).
+Nothing here has run against the real stash Supabase project, Google sign-in, or Vercel yet. Everything below ran in the development container (Node 22, Postgres 16.13, Chromium 141 from Playwright 1.56.1) and in GitHub Actions (Node 24, Postgres 16): [Web checks run 1](https://github.com/gtfol/stash/actions/runs/36233924853) passed all 48 tests with none skipped and all 5 browser tests, and keeps their screenshots as an artifact.
 
 ### Automated checks
 
