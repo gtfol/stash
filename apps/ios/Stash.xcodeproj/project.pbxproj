@@ -1,0 +1,909 @@
+// !$*UTF8*$!
+{
+	archiveVersion = "1";
+	classes = {
+	};
+	objectVersion = "56";
+	objects = {
+		0C5FE08F7D7559EDB04C0045 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "LibraryModel.swift";
+			sourceTree = "<group>";
+		};
+		45E5A4FBC07A9B1EC2B88E9A = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "MetadataRefresher.swift";
+			sourceTree = "<group>";
+		};
+		0AB21785B5EB3E6A75456E24 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "StashApp.swift";
+			sourceTree = "<group>";
+		};
+		EF19477E32DECA88C99076EA = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "SystemMetadataExtractor.swift";
+			sourceTree = "<group>";
+		};
+		0F8A523DDC8C13234041A843 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "ThumbnailLoader.swift";
+			sourceTree = "<group>";
+		};
+		B7815F4D99FE4EDFC65D6529 = {
+			isa = "PBXGroup";
+			children = ("0C5FE08F7D7559EDB04C0045", "45E5A4FBC07A9B1EC2B88E9A", "0AB21785B5EB3E6A75456E24", "EF19477E32DECA88C99076EA", "0F8A523DDC8C13234041A843",);
+			path = "App";
+			sourceTree = "<group>";
+		};
+		C68E071CB39E1251FD4BFFA2 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "AppConfiguration.swift";
+			sourceTree = "<group>";
+		};
+		328976ABDD2CF5CC5D557730 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "HTMLMetadataExtractor.swift";
+			sourceTree = "<group>";
+		};
+		B83A58B0C1FCEE948AD71267 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "HTMLMetadataParser.swift";
+			sourceTree = "<group>";
+		};
+		1673158F1F0E8DE85511CDEF = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "LinkMetadata.swift";
+			sourceTree = "<group>";
+		};
+		E7346D479DACA874098F6A2C = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "SavedItemRecord.swift";
+			sourceTree = "<group>";
+		};
+		1836CE9824B8355BB13F4DCA = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "SharedPayload.swift";
+			sourceTree = "<group>";
+		};
+		01F4A6511F5C14AF6DB18403 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "ShareInbox.swift";
+			sourceTree = "<group>";
+		};
+		B49F5CFC7A721CE1BFC25E56 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "WebLink.swift";
+			sourceTree = "<group>";
+		};
+		4D4C77E720C3179565B812D9 = {
+			isa = "PBXGroup";
+			children = ("C68E071CB39E1251FD4BFFA2", "328976ABDD2CF5CC5D557730", "B83A58B0C1FCEE948AD71267", "1673158F1F0E8DE85511CDEF", "E7346D479DACA874098F6A2C", "1836CE9824B8355BB13F4DCA", "01F4A6511F5C14AF6DB18403", "B49F5CFC7A721CE1BFC25E56",);
+			path = "Core";
+			sourceTree = "<group>";
+		};
+		42ADD2705352ED216BA6E62C = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "SavedItem.swift";
+			sourceTree = "<group>";
+		};
+		3EF29CC9B70C6D16B6C3FF37 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "SavedItemStore.swift";
+			sourceTree = "<group>";
+		};
+		4E02B38744C94E73379F6119 = {
+			isa = "PBXGroup";
+			children = ("42ADD2705352ED216BA6E62C", "3EF29CC9B70C6D16B6C3FF37",);
+			path = "Persistence";
+			sourceTree = "<group>";
+		};
+		C67E5DAC5C789C3E331E91CF = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "file";
+			path = "Lato-OFL.txt";
+			sourceTree = "<group>";
+		};
+		D7034A09760B31C51AAF4C84 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "file";
+			path = "Lato-Regular.ttf";
+			sourceTree = "<group>";
+		};
+		39FD4B582D572A2D38383BBC = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "file";
+			path = "PrivacyInfo.xcprivacy";
+			sourceTree = "<group>";
+		};
+		724C7B9A0FA44440E521802C = {
+			isa = "PBXGroup";
+			children = ("C67E5DAC5C789C3E331E91CF", "D7034A09760B31C51AAF4C84", "39FD4B582D572A2D38383BBC",);
+			path = "Resources";
+			sourceTree = "<group>";
+		};
+		6B1F5E90E99C749470B98980 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "AddBar.swift";
+			sourceTree = "<group>";
+		};
+		C9B98AFCE0A28E51BD8831F2 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "AddLinkView.swift";
+			sourceTree = "<group>";
+		};
+		F634A407BF663A19D1E66E8E = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "Interface.swift";
+			sourceTree = "<group>";
+		};
+		3CF3338AA5FD60C769198A5F = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "ItemDetailView.swift";
+			sourceTree = "<group>";
+		};
+		43673AE7AACC81E6CDB75204 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "ItemRow.swift";
+			sourceTree = "<group>";
+		};
+		9151BF1364CBF4F0F987C177 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "LibraryView.swift";
+			sourceTree = "<group>";
+		};
+		E21DE092EEB1037097D62347 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "LinkImages.swift";
+			sourceTree = "<group>";
+		};
+		E5E6F8E211926024117D73D9 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "PasteLinkButton.swift";
+			sourceTree = "<group>";
+		};
+		AFE4693AEAE4CA6575F9508A = {
+			isa = "PBXGroup";
+			children = ("6B1F5E90E99C749470B98980", "C9B98AFCE0A28E51BD8831F2", "F634A407BF663A19D1E66E8E", "3CF3338AA5FD60C769198A5F", "43673AE7AACC81E6CDB75204", "9151BF1364CBF4F0F987C177", "E21DE092EEB1037097D62347", "E5E6F8E211926024117D73D9",);
+			path = "UI";
+			sourceTree = "<group>";
+		};
+		DA5BAF5A725CE7BE7F73574F = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "folder.assetcatalog";
+			path = "Assets.xcassets";
+			sourceTree = "<group>";
+		};
+		F748B4AAA7634A6F7F37B9F4 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "text.plist.xml";
+			path = "Info.plist";
+			sourceTree = "<group>";
+		};
+		4A057ABF909BC966455BCF40 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "text.plist.entitlements";
+			path = "Stash.entitlements";
+			sourceTree = "<group>";
+		};
+		C8DB101D4D64EAB1A774B3C7 = {
+			isa = "PBXGroup";
+			children = ("B7815F4D99FE4EDFC65D6529", "4D4C77E720C3179565B812D9", "4E02B38744C94E73379F6119", "724C7B9A0FA44440E521802C", "AFE4693AEAE4CA6575F9508A", "DA5BAF5A725CE7BE7F73574F", "F748B4AAA7634A6F7F37B9F4", "4A057ABF909BC966455BCF40",);
+			path = "Stash";
+			sourceTree = "<group>";
+		};
+		510E8E85B0BAC8325AA9DC1F = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "text.plist.xml";
+			path = "Info.plist";
+			sourceTree = "<group>";
+		};
+		11CF454023392C9192170800 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "file";
+			path = "PrivacyInfo.xcprivacy";
+			sourceTree = "<group>";
+		};
+		840195834EDAE7EB2AA415E0 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "ShareViewController.swift";
+			sourceTree = "<group>";
+		};
+		20E8E72A2BAB8F10164597CB = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "text.plist.entitlements";
+			path = "StashShare.entitlements";
+			sourceTree = "<group>";
+		};
+		F6B69B83384637DF8307B7BC = {
+			isa = "PBXGroup";
+			children = ("510E8E85B0BAC8325AA9DC1F", "11CF454023392C9192170800", "840195834EDAE7EB2AA415E0", "20E8E72A2BAB8F10164597CB",);
+			path = "StashShare";
+			sourceTree = "<group>";
+		};
+		53CABF54855AA6FE3C6B3B53 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "ExtractorTests.swift";
+			sourceTree = "<group>";
+		};
+		E967D3A7EDA403A6642FBA8C = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "MetadataTests.swift";
+			sourceTree = "<group>";
+		};
+		C5FEF7D48E7E27EEBC28B675 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "SharedPayloadTests.swift";
+			sourceTree = "<group>";
+		};
+		D5CFFF9F1B109F5D57646EC3 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "ShareInboxTests.swift";
+			sourceTree = "<group>";
+		};
+		15594BE9445BD5E290373CEB = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "StoreTests.swift";
+			sourceTree = "<group>";
+		};
+		189B35D6C2D7F0C89531AC0D = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "WebLinkTests.swift";
+			sourceTree = "<group>";
+		};
+		E9C04E9478FA2CECE6BF50FE = {
+			isa = "PBXGroup";
+			children = ("53CABF54855AA6FE3C6B3B53", "E967D3A7EDA403A6642FBA8C", "C5FEF7D48E7E27EEBC28B675", "D5CFFF9F1B109F5D57646EC3", "15594BE9445BD5E290373CEB", "189B35D6C2D7F0C89531AC0D",);
+			path = "StashTests";
+			sourceTree = "<group>";
+		};
+		0152CCAAC7A0C4D92157640B = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "StashUITests.swift";
+			sourceTree = "<group>";
+		};
+		3B9795FE898D899790BC57FE = {
+			isa = "PBXGroup";
+			children = ("0152CCAAC7A0C4D92157640B",);
+			path = "StashUITests";
+			sourceTree = "<group>";
+		};
+		81F31879437340D5CD6ED968 = {
+			isa = "PBXFileReference";
+			explicitFileType = "wrapper.application";
+			path = "Stash.app";
+			sourceTree = "BUILT_PRODUCTS_DIR";
+		};
+		8A7EF85CC49A09342FCD9B25 = {
+			isa = "PBXFileReference";
+			explicitFileType = "wrapper.app-extension";
+			path = "StashShare.appex";
+			sourceTree = "BUILT_PRODUCTS_DIR";
+		};
+		70F09BF32F6D77A92FF191B4 = {
+			isa = "PBXFileReference";
+			explicitFileType = "wrapper.cfbundle";
+			path = "StashTests.xctest";
+			sourceTree = "BUILT_PRODUCTS_DIR";
+		};
+		1E72342EF5FEED24ED965995 = {
+			isa = "PBXFileReference";
+			explicitFileType = "wrapper.cfbundle";
+			path = "StashUITests.xctest";
+			sourceTree = "BUILT_PRODUCTS_DIR";
+		};
+		0A3E27B8CA818264D75C8D81 = {
+			isa = "PBXGroup";
+			children = ("81F31879437340D5CD6ED968", "8A7EF85CC49A09342FCD9B25", "70F09BF32F6D77A92FF191B4", "1E72342EF5FEED24ED965995",);
+			name = "Products";
+			sourceTree = "<group>";
+		};
+		19F479106CE8C3BA8C106518 = {
+			isa = "PBXGroup";
+			children = ("C8DB101D4D64EAB1A774B3C7", "F6B69B83384637DF8307B7BC", "E9C04E9478FA2CECE6BF50FE", "3B9795FE898D899790BC57FE", "0A3E27B8CA818264D75C8D81",);
+			sourceTree = "<group>";
+		};
+		7EC54E9A4B4EDA233ED08F28 = {
+			isa = "PBXBuildFile";
+			fileRef = "8A7EF85CC49A09342FCD9B25";
+			settings = {
+				ATTRIBUTES = ("RemoveHeadersOnCopy",);
+			};
+		};
+		AFC32963E7959E7A34264826 = {
+			isa = "PBXCopyFilesBuildPhase";
+			buildActionMask = "2147483647";
+			dstPath = "";
+			dstSubfolderSpec = "13";
+			files = ("7EC54E9A4B4EDA233ED08F28",);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = "0";
+		};
+		753A0A74FA4A48A071DECD83 = {
+			isa = "PBXBuildFile";
+			fileRef = "840195834EDAE7EB2AA415E0";
+		};
+		C2F1556B22869E002CBAD557 = {
+			isa = "PBXBuildFile";
+			fileRef = "C68E071CB39E1251FD4BFFA2";
+		};
+		5ADAA655B10DBA25956D0509 = {
+			isa = "PBXBuildFile";
+			fileRef = "1836CE9824B8355BB13F4DCA";
+		};
+		B8F7B85929C77E5E4B12FFBA = {
+			isa = "PBXBuildFile";
+			fileRef = "01F4A6511F5C14AF6DB18403";
+		};
+		8FB91208D60B9585C9C7AB0D = {
+			isa = "PBXBuildFile";
+			fileRef = "B49F5CFC7A721CE1BFC25E56";
+		};
+		002D03771A76FBD68BA42936 = {
+			isa = "PBXBuildFile";
+			fileRef = "F634A407BF663A19D1E66E8E";
+		};
+		CB6E60202D32613DBBC6D1A6 = {
+			isa = "PBXSourcesBuildPhase";
+			buildActionMask = "2147483647";
+			files = ("753A0A74FA4A48A071DECD83", "C2F1556B22869E002CBAD557", "5ADAA655B10DBA25956D0509", "B8F7B85929C77E5E4B12FFBA", "8FB91208D60B9585C9C7AB0D", "002D03771A76FBD68BA42936",);
+			runOnlyForDeploymentPostprocessing = "0";
+		};
+		981D2EAF64742EC6FC4D8D03 = {
+			isa = "PBXFrameworksBuildPhase";
+			buildActionMask = "2147483647";
+			files = ();
+			runOnlyForDeploymentPostprocessing = "0";
+		};
+		AFD53DCC83FF54C83EC29C1E = {
+			isa = "PBXBuildFile";
+			fileRef = "C67E5DAC5C789C3E331E91CF";
+		};
+		44352E8D88D5560C97E60CDC = {
+			isa = "PBXBuildFile";
+			fileRef = "D7034A09760B31C51AAF4C84";
+		};
+		47F0E17665F23B0746A15927 = {
+			isa = "PBXBuildFile";
+			fileRef = "11CF454023392C9192170800";
+		};
+		5EC6728CAB3E6157D04D84CE = {
+			isa = "PBXResourcesBuildPhase";
+			buildActionMask = "2147483647";
+			files = ("AFD53DCC83FF54C83EC29C1E", "44352E8D88D5560C97E60CDC", "47F0E17665F23B0746A15927",);
+			runOnlyForDeploymentPostprocessing = "0";
+		};
+		BCA2849196CC6663781E27A6 = {
+			isa = "XCBuildConfiguration";
+			buildSettings = {
+				PRODUCT_NAME = "StashShare";
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.gtfol.stash.share";
+				INFOPLIST_FILE = "StashShare/Info.plist";
+				GENERATE_INFOPLIST_FILE = "NO";
+				CODE_SIGN_ENTITLEMENTS = "StashShare/StashShare.entitlements";
+				APPLICATION_EXTENSION_API_ONLY = "YES";
+				SKIP_INSTALL = "YES";
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks", "@executable_path/../../Frameworks",);
+			};
+			name = "Debug";
+		};
+		FE8AFB7066CD3BF452E3C019 = {
+			isa = "XCBuildConfiguration";
+			buildSettings = {
+				PRODUCT_NAME = "StashShare";
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.gtfol.stash.share";
+				INFOPLIST_FILE = "StashShare/Info.plist";
+				GENERATE_INFOPLIST_FILE = "NO";
+				CODE_SIGN_ENTITLEMENTS = "StashShare/StashShare.entitlements";
+				APPLICATION_EXTENSION_API_ONLY = "YES";
+				SKIP_INSTALL = "YES";
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks", "@executable_path/../../Frameworks",);
+			};
+			name = "Release";
+		};
+		6905B41B8AB8ADB257AFEF47 = {
+			isa = "XCConfigurationList";
+			buildConfigurations = ("BCA2849196CC6663781E27A6", "FE8AFB7066CD3BF452E3C019",);
+			defaultConfigurationIsVisible = "0";
+			defaultConfigurationName = "Release";
+		};
+		874F91A01A64B6A30CDAB3C3 = {
+			isa = "PBXNativeTarget";
+			buildConfigurationList = "6905B41B8AB8ADB257AFEF47";
+			buildPhases = ("CB6E60202D32613DBBC6D1A6", "981D2EAF64742EC6FC4D8D03", "5EC6728CAB3E6157D04D84CE",);
+			buildRules = ();
+			dependencies = ();
+			name = "StashShare";
+			productName = "StashShare";
+			productReference = "8A7EF85CC49A09342FCD9B25";
+			productType = "com.apple.product-type.app-extension";
+		};
+		5D8384E283C672A9E339C867 = {
+			isa = "PBXBuildFile";
+			fileRef = "0C5FE08F7D7559EDB04C0045";
+		};
+		5AAAFC5CEEAA9D323CAC99F6 = {
+			isa = "PBXBuildFile";
+			fileRef = "45E5A4FBC07A9B1EC2B88E9A";
+		};
+		2595C530C1BCE7C340BC5A4F = {
+			isa = "PBXBuildFile";
+			fileRef = "0AB21785B5EB3E6A75456E24";
+		};
+		239750FFA282F5DD96158A3D = {
+			isa = "PBXBuildFile";
+			fileRef = "EF19477E32DECA88C99076EA";
+		};
+		CE30760465684754EE02B5C4 = {
+			isa = "PBXBuildFile";
+			fileRef = "0F8A523DDC8C13234041A843";
+		};
+		F5E9D8B73240F845DA79AF9A = {
+			isa = "PBXBuildFile";
+			fileRef = "C68E071CB39E1251FD4BFFA2";
+		};
+		B267EB85A4AE375E6BD29B24 = {
+			isa = "PBXBuildFile";
+			fileRef = "328976ABDD2CF5CC5D557730";
+		};
+		F920DDB9A1CD29B5FAEE68DA = {
+			isa = "PBXBuildFile";
+			fileRef = "B83A58B0C1FCEE948AD71267";
+		};
+		BD5C31C4D7FAE0770A316DA7 = {
+			isa = "PBXBuildFile";
+			fileRef = "1673158F1F0E8DE85511CDEF";
+		};
+		073D8329F3F93564361390D3 = {
+			isa = "PBXBuildFile";
+			fileRef = "E7346D479DACA874098F6A2C";
+		};
+		ACD652C0921B32D9273FB754 = {
+			isa = "PBXBuildFile";
+			fileRef = "01F4A6511F5C14AF6DB18403";
+		};
+		0184872B3114B22CAC1CEB73 = {
+			isa = "PBXBuildFile";
+			fileRef = "1836CE9824B8355BB13F4DCA";
+		};
+		AD7B9D3A5C7AA3867CA47100 = {
+			isa = "PBXBuildFile";
+			fileRef = "B49F5CFC7A721CE1BFC25E56";
+		};
+		1C124CD218EDDE00E3EBDCE9 = {
+			isa = "PBXBuildFile";
+			fileRef = "42ADD2705352ED216BA6E62C";
+		};
+		9269BEA03725DD67D9D9CB67 = {
+			isa = "PBXBuildFile";
+			fileRef = "3EF29CC9B70C6D16B6C3FF37";
+		};
+		02EC039697E50F19CD774AA1 = {
+			isa = "PBXBuildFile";
+			fileRef = "6B1F5E90E99C749470B98980";
+		};
+		D4085EF588FE2CD152311B92 = {
+			isa = "PBXBuildFile";
+			fileRef = "C9B98AFCE0A28E51BD8831F2";
+		};
+		0CB345E78E9A0500CEB42ED5 = {
+			isa = "PBXBuildFile";
+			fileRef = "F634A407BF663A19D1E66E8E";
+		};
+		828F89A0727ABF702FAB39FC = {
+			isa = "PBXBuildFile";
+			fileRef = "3CF3338AA5FD60C769198A5F";
+		};
+		26D7713140B12AA31F45C825 = {
+			isa = "PBXBuildFile";
+			fileRef = "43673AE7AACC81E6CDB75204";
+		};
+		56DA02BECEB66DD8107EB0F3 = {
+			isa = "PBXBuildFile";
+			fileRef = "9151BF1364CBF4F0F987C177";
+		};
+		2BFC38DBC1F4F6C1FD7DD761 = {
+			isa = "PBXBuildFile";
+			fileRef = "E21DE092EEB1037097D62347";
+		};
+		FB251633467332570CB26AF5 = {
+			isa = "PBXBuildFile";
+			fileRef = "E5E6F8E211926024117D73D9";
+		};
+		AFF87A50730392B6633ACECE = {
+			isa = "PBXSourcesBuildPhase";
+			buildActionMask = "2147483647";
+			files = ("5D8384E283C672A9E339C867", "5AAAFC5CEEAA9D323CAC99F6", "2595C530C1BCE7C340BC5A4F", "239750FFA282F5DD96158A3D", "CE30760465684754EE02B5C4", "F5E9D8B73240F845DA79AF9A", "B267EB85A4AE375E6BD29B24", "F920DDB9A1CD29B5FAEE68DA", "BD5C31C4D7FAE0770A316DA7", "073D8329F3F93564361390D3", "ACD652C0921B32D9273FB754", "0184872B3114B22CAC1CEB73", "AD7B9D3A5C7AA3867CA47100", "1C124CD218EDDE00E3EBDCE9", "9269BEA03725DD67D9D9CB67", "02EC039697E50F19CD774AA1", "D4085EF588FE2CD152311B92", "0CB345E78E9A0500CEB42ED5", "828F89A0727ABF702FAB39FC", "26D7713140B12AA31F45C825", "56DA02BECEB66DD8107EB0F3", "2BFC38DBC1F4F6C1FD7DD761", "FB251633467332570CB26AF5",);
+			runOnlyForDeploymentPostprocessing = "0";
+		};
+		7A4C2DC8FCA657188648E999 = {
+			isa = "PBXFrameworksBuildPhase";
+			buildActionMask = "2147483647";
+			files = ();
+			runOnlyForDeploymentPostprocessing = "0";
+		};
+		90C6C5BFFC22BE7F62A3C56F = {
+			isa = "PBXBuildFile";
+			fileRef = "DA5BAF5A725CE7BE7F73574F";
+		};
+		CF3369B50F978172460F52CB = {
+			isa = "PBXBuildFile";
+			fileRef = "C67E5DAC5C789C3E331E91CF";
+		};
+		E2A924BA63AC11F61304DAD7 = {
+			isa = "PBXBuildFile";
+			fileRef = "D7034A09760B31C51AAF4C84";
+		};
+		D6292578E2C27F1F984E5E20 = {
+			isa = "PBXBuildFile";
+			fileRef = "39FD4B582D572A2D38383BBC";
+		};
+		F9187E824FE171A6F0EFAE28 = {
+			isa = "PBXResourcesBuildPhase";
+			buildActionMask = "2147483647";
+			files = ("90C6C5BFFC22BE7F62A3C56F", "CF3369B50F978172460F52CB", "E2A924BA63AC11F61304DAD7", "D6292578E2C27F1F984E5E20",);
+			runOnlyForDeploymentPostprocessing = "0";
+		};
+		F0AC787420143CFA7C407440 = {
+			isa = "PBXContainerItemProxy";
+			containerPortal = "244210E48437B6556980A702";
+			proxyType = "1";
+			remoteGlobalIDString = "874F91A01A64B6A30CDAB3C3";
+			remoteInfo = "StashShare";
+		};
+		79A9139C15405D271F19530D = {
+			isa = "PBXTargetDependency";
+			target = "874F91A01A64B6A30CDAB3C3";
+			targetProxy = "F0AC787420143CFA7C407440";
+		};
+		6C991EF6ABB55961C32710ED = {
+			isa = "XCBuildConfiguration";
+			buildSettings = {
+				PRODUCT_NAME = "Stash";
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.gtfol.stash";
+				INFOPLIST_FILE = "Stash/Info.plist";
+				GENERATE_INFOPLIST_FILE = "NO";
+				CODE_SIGN_ENTITLEMENTS = "Stash/Stash.entitlements";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = "AccentColor";
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks",);
+			};
+			name = "Debug";
+		};
+		E9C949CC126DA712A0D9F719 = {
+			isa = "XCBuildConfiguration";
+			buildSettings = {
+				PRODUCT_NAME = "Stash";
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.gtfol.stash";
+				INFOPLIST_FILE = "Stash/Info.plist";
+				GENERATE_INFOPLIST_FILE = "NO";
+				CODE_SIGN_ENTITLEMENTS = "Stash/Stash.entitlements";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = "AccentColor";
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks",);
+			};
+			name = "Release";
+		};
+		D0DAC40135547B4669B60788 = {
+			isa = "XCConfigurationList";
+			buildConfigurations = ("6C991EF6ABB55961C32710ED", "E9C949CC126DA712A0D9F719",);
+			defaultConfigurationIsVisible = "0";
+			defaultConfigurationName = "Release";
+		};
+		C1E9827DB735CA9BAA54A540 = {
+			isa = "PBXNativeTarget";
+			buildConfigurationList = "D0DAC40135547B4669B60788";
+			buildPhases = ("AFF87A50730392B6633ACECE", "7A4C2DC8FCA657188648E999", "F9187E824FE171A6F0EFAE28", "AFC32963E7959E7A34264826",);
+			buildRules = ();
+			dependencies = ("79A9139C15405D271F19530D",);
+			name = "Stash";
+			productName = "Stash";
+			productReference = "81F31879437340D5CD6ED968";
+			productType = "com.apple.product-type.application";
+		};
+		4E5A716F54376145D944D6A1 = {
+			isa = "PBXBuildFile";
+			fileRef = "53CABF54855AA6FE3C6B3B53";
+		};
+		5C4988A9764DD3275329025D = {
+			isa = "PBXBuildFile";
+			fileRef = "E967D3A7EDA403A6642FBA8C";
+		};
+		9C475B90CB391D06360B9A1B = {
+			isa = "PBXBuildFile";
+			fileRef = "D5CFFF9F1B109F5D57646EC3";
+		};
+		6346EF9C8759FD4C86604FBF = {
+			isa = "PBXBuildFile";
+			fileRef = "C5FEF7D48E7E27EEBC28B675";
+		};
+		E516ED6E67C60238E1A9621B = {
+			isa = "PBXBuildFile";
+			fileRef = "15594BE9445BD5E290373CEB";
+		};
+		064A3768D4BC319C34245120 = {
+			isa = "PBXBuildFile";
+			fileRef = "189B35D6C2D7F0C89531AC0D";
+		};
+		DEE94446A282611C16F7781C = {
+			isa = "PBXSourcesBuildPhase";
+			buildActionMask = "2147483647";
+			files = ("4E5A716F54376145D944D6A1", "5C4988A9764DD3275329025D", "9C475B90CB391D06360B9A1B", "6346EF9C8759FD4C86604FBF", "E516ED6E67C60238E1A9621B", "064A3768D4BC319C34245120",);
+			runOnlyForDeploymentPostprocessing = "0";
+		};
+		B10CDED79664567B030B2B4F = {
+			isa = "PBXFrameworksBuildPhase";
+			buildActionMask = "2147483647";
+			files = ();
+			runOnlyForDeploymentPostprocessing = "0";
+		};
+		E9CBB903F38F2FBE0A5A8203 = {
+			isa = "PBXContainerItemProxy";
+			containerPortal = "244210E48437B6556980A702";
+			proxyType = "1";
+			remoteGlobalIDString = "C1E9827DB735CA9BAA54A540";
+			remoteInfo = "Stash";
+		};
+		F9A94CEF8CF7D85CE881E703 = {
+			isa = "PBXTargetDependency";
+			target = "C1E9827DB735CA9BAA54A540";
+			targetProxy = "E9CBB903F38F2FBE0A5A8203";
+		};
+		B8A1689F3AF0A3522A593513 = {
+			isa = "XCBuildConfiguration";
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.gtfol.stash.tests";
+				GENERATE_INFOPLIST_FILE = "YES";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Stash.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Stash";
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks", "@loader_path/Frameworks",);
+			};
+			name = "Debug";
+		};
+		65C52171339A2024A970B3DE = {
+			isa = "XCBuildConfiguration";
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.gtfol.stash.tests";
+				GENERATE_INFOPLIST_FILE = "YES";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Stash.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Stash";
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks", "@loader_path/Frameworks",);
+			};
+			name = "Release";
+		};
+		C150F258E88857E2B76E0B0A = {
+			isa = "XCConfigurationList";
+			buildConfigurations = ("B8A1689F3AF0A3522A593513", "65C52171339A2024A970B3DE",);
+			defaultConfigurationIsVisible = "0";
+			defaultConfigurationName = "Release";
+		};
+		9805CBD60EB4F66728D5D195 = {
+			isa = "PBXNativeTarget";
+			buildConfigurationList = "C150F258E88857E2B76E0B0A";
+			buildPhases = ("DEE94446A282611C16F7781C", "B10CDED79664567B030B2B4F",);
+			buildRules = ();
+			dependencies = ("F9A94CEF8CF7D85CE881E703",);
+			name = "StashTests";
+			productName = "StashTests";
+			productReference = "70F09BF32F6D77A92FF191B4";
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		01C0A1B5A4C5F189CC582325 = {
+			isa = "PBXBuildFile";
+			fileRef = "0152CCAAC7A0C4D92157640B";
+		};
+		7CEA9B3371728EC6DECD5B9C = {
+			isa = "PBXSourcesBuildPhase";
+			buildActionMask = "2147483647";
+			files = ("01C0A1B5A4C5F189CC582325",);
+			runOnlyForDeploymentPostprocessing = "0";
+		};
+		8DB4D8C12EFE1404B7805AC9 = {
+			isa = "PBXFrameworksBuildPhase";
+			buildActionMask = "2147483647";
+			files = ();
+			runOnlyForDeploymentPostprocessing = "0";
+		};
+		E08EF9729951C44D364E7E25 = {
+			isa = "PBXContainerItemProxy";
+			containerPortal = "244210E48437B6556980A702";
+			proxyType = "1";
+			remoteGlobalIDString = "C1E9827DB735CA9BAA54A540";
+			remoteInfo = "Stash";
+		};
+		3532D8D9D6C1A667B9837110 = {
+			isa = "PBXTargetDependency";
+			target = "C1E9827DB735CA9BAA54A540";
+			targetProxy = "E08EF9729951C44D364E7E25";
+		};
+		D3D552A0B5C6332B1A2BCC56 = {
+			isa = "XCBuildConfiguration";
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.gtfol.stash.uitests";
+				GENERATE_INFOPLIST_FILE = "YES";
+				TEST_TARGET_NAME = "Stash";
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks", "@loader_path/Frameworks",);
+			};
+			name = "Debug";
+		};
+		DB09B46AA7DD169B9283CE8D = {
+			isa = "XCBuildConfiguration";
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.gtfol.stash.uitests";
+				GENERATE_INFOPLIST_FILE = "YES";
+				TEST_TARGET_NAME = "Stash";
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks", "@loader_path/Frameworks",);
+			};
+			name = "Release";
+		};
+		0EC05FA748C253FF3D26CC6A = {
+			isa = "XCConfigurationList";
+			buildConfigurations = ("D3D552A0B5C6332B1A2BCC56", "DB09B46AA7DD169B9283CE8D",);
+			defaultConfigurationIsVisible = "0";
+			defaultConfigurationName = "Release";
+		};
+		C972F427C0D501B6444DFE03 = {
+			isa = "PBXNativeTarget";
+			buildConfigurationList = "0EC05FA748C253FF3D26CC6A";
+			buildPhases = ("7CEA9B3371728EC6DECD5B9C", "8DB4D8C12EFE1404B7805AC9",);
+			buildRules = ();
+			dependencies = ("3532D8D9D6C1A667B9837110",);
+			name = "StashUITests";
+			productName = "StashUITests";
+			productReference = "1E72342EF5FEED24ED965995";
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		73EBF6644258C120893E685D = {
+			isa = "XCBuildConfiguration";
+			buildSettings = {
+				COPY_PHASE_STRIP = "NO";
+				LM_SKIP_METADATA_EXTRACTION = "YES";
+				CLANG_ENABLE_MODULES = "YES";
+				CLANG_ENABLE_OBJC_ARC = "YES";
+				GCC_C_LANGUAGE_STANDARD = "gnu17";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				IPHONEOS_DEPLOYMENT_TARGET = "17.0";
+				SDKROOT = "iphoneos";
+				SWIFT_VERSION = "6.0";
+				SWIFT_STRICT_CONCURRENCY = "complete";
+				ENABLE_USER_SCRIPT_SANDBOXING = "YES";
+				GCC_WARN_ABOUT_RETURN_TYPE = "YES_ERROR";
+				GCC_WARN_UNINITIALIZED_AUTOS = "YES_AGGRESSIVE";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = "YES";
+				CLANG_WARN_UNREACHABLE_CODE = "YES";
+				SWIFT_TREAT_WARNINGS_AS_ERRORS = "YES";
+				TARGETED_DEVICE_FAMILY = "1";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = "NO";
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = "NO";
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = "NO";
+				CODE_SIGN_STYLE = "Automatic";
+				DEVELOPMENT_TEAM = "J59ZSG67SJ";
+				MARKETING_VERSION = "0.1";
+				CURRENT_PROJECT_VERSION = "1";
+				STASH_APP_GROUP = "group.dev.gtfol.stash";
+				STASH_DISPLAY_NAME = "stash";
+				DEBUG_INFORMATION_FORMAT = "dwarf";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				ONLY_ACTIVE_ARCH = "YES";
+				ENABLE_TESTABILITY = "YES";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+			};
+			name = "Debug";
+		};
+		0B0C687DF8B6B8DC790B519C = {
+			isa = "XCBuildConfiguration";
+			buildSettings = {
+				COPY_PHASE_STRIP = "NO";
+				LM_SKIP_METADATA_EXTRACTION = "YES";
+				CLANG_ENABLE_MODULES = "YES";
+				CLANG_ENABLE_OBJC_ARC = "YES";
+				GCC_C_LANGUAGE_STANDARD = "gnu17";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				IPHONEOS_DEPLOYMENT_TARGET = "17.0";
+				SDKROOT = "iphoneos";
+				SWIFT_VERSION = "6.0";
+				SWIFT_STRICT_CONCURRENCY = "complete";
+				ENABLE_USER_SCRIPT_SANDBOXING = "YES";
+				GCC_WARN_ABOUT_RETURN_TYPE = "YES_ERROR";
+				GCC_WARN_UNINITIALIZED_AUTOS = "YES_AGGRESSIVE";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = "YES";
+				CLANG_WARN_UNREACHABLE_CODE = "YES";
+				SWIFT_TREAT_WARNINGS_AS_ERRORS = "YES";
+				TARGETED_DEVICE_FAMILY = "1";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = "NO";
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = "NO";
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = "NO";
+				CODE_SIGN_STYLE = "Automatic";
+				DEVELOPMENT_TEAM = "J59ZSG67SJ";
+				MARKETING_VERSION = "0.1";
+				CURRENT_PROJECT_VERSION = "1";
+				STASH_APP_GROUP = "group.dev.gtfol.stash";
+				STASH_DISPLAY_NAME = "stash";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				ONLY_ACTIVE_ARCH = "NO";
+				ENABLE_TESTABILITY = "NO";
+				SWIFT_COMPILATION_MODE = "wholemodule";
+			};
+			name = "Release";
+		};
+		76F8DEC3DFE0BDB465198890 = {
+			isa = "XCConfigurationList";
+			buildConfigurations = ("73EBF6644258C120893E685D", "0B0C687DF8B6B8DC790B519C",);
+			defaultConfigurationIsVisible = "0";
+			defaultConfigurationName = "Release";
+		};
+		244210E48437B6556980A702 = {
+			isa = "PBXProject";
+			attributes = {
+				BuildIndependentTargetsInParallel = "YES";
+				LastUpgradeCheck = "2660";
+				LastSwiftUpdateCheck = "2660";
+				TargetAttributes = {
+					C1E9827DB735CA9BAA54A540 = {
+						CreatedOnToolsVersion = "26.6";
+					};
+					874F91A01A64B6A30CDAB3C3 = {
+						CreatedOnToolsVersion = "26.6";
+					};
+					9805CBD60EB4F66728D5D195 = {
+						CreatedOnToolsVersion = "26.6";
+						TestTargetID = "C1E9827DB735CA9BAA54A540";
+					};
+					C972F427C0D501B6444DFE03 = {
+						CreatedOnToolsVersion = "26.6";
+						TestTargetID = "C1E9827DB735CA9BAA54A540";
+					};
+				};
+			};
+			buildConfigurationList = "76F8DEC3DFE0BDB465198890";
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = "en";
+			hasScannedForEncodings = "0";
+			knownRegions = ("en", "Base",);
+			mainGroup = "19F479106CE8C3BA8C106518";
+			productRefGroup = "0A3E27B8CA818264D75C8D81";
+			projectDirPath = "";
+			projectRoot = "";
+			targets = ("C1E9827DB735CA9BAA54A540", "874F91A01A64B6A30CDAB3C3", "9805CBD60EB4F66728D5D195", "C972F427C0D501B6444DFE03",);
+		};
+	};
+	rootObject = "244210E48437B6556980A702";
+}
