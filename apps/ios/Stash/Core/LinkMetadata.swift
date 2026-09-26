@@ -57,7 +57,7 @@ enum MetadataFailure: String, Error, Codable, Equatable, Sendable {
         case .offline: "you’re offline. details will load when you’re back online."
         case .timedOut: "the site took too long to answer."
         case .unreachable: "the site couldn’t be reached."
-        case .blocked: "this site doesn’t allow previews. you can edit the title."
+        case .blocked: "this site doesn’t allow previews."
         case .notFound: "the site says this page wasn’t found. the link is still saved."
         case .serverError: "the site had a problem. try again later."
         case .notWebPage: "this link isn’t a web page, so there are no details."

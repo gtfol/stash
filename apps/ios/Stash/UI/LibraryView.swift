@@ -67,7 +67,7 @@ struct LibraryView: View {
             ScrollViewReader { proxy in
                 List {
                     ForEach(visible) { record in
-                        row(record)
+                        row(record, first: record.id == visible.first?.id)
                     }
                 }
                 .listStyle(.plain)
@@ -81,12 +81,15 @@ struct LibraryView: View {
         }
     }
 
-    private func row(_ record: SavedItemRecord) -> some View {
+    private func row(_ record: SavedItemRecord, first: Bool) -> some View {
         ItemRow(record: record, fetching: model.refresher.fetching.contains(record.id),
                 open: { open(record) }, details: { detail = DetailSelection(id: record.id) })
             .listRowInsets(EdgeInsets(top: 0, leading: StashStyle.gutter, bottom: 0, trailing: 4))
             .listRowBackground(StashStyle.canvas)
             .listRowSeparatorTint(StashStyle.divider)
+            // Hairlines run from the gutter, not from the tile's letter, and only between items.
+            .alignmentGuide(.listRowSeparatorLeading) { $0[.leading] }
+            .listRowSeparator(first ? .hidden : .visible, edges: .top)
             .swipeActions(edge: .trailing, allowsFullSwipe: false) {
                 Button { confirmingDelete = record } label: { Label("delete", systemImage: "trash") }
                     .tint(.red)
