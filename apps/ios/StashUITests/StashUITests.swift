@@ -62,7 +62,9 @@ final class StashUITests: XCTestCase {
         search.typeText(" zzz")
         XCTAssertTrue(text(app, "no matches").waitForExistence(timeout: 5))
         snapshot(app, "05 no matches")
-        search.typeText(String(repeating: delete, count: 20))
+        // The field's own clear button; typed backspaces can be dropped by the test runner.
+        let clear = search.buttons["Clear text"]
+        if clear.exists { clear.tap() } else { search.typeText(String(repeating: delete, count: 20)) }
         XCTAssertTrue(eventually { self.items(app).count == 2 })
 
         // Rename the newest item; the new title shows in the list.
