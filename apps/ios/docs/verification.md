@@ -2,7 +2,7 @@
 
 ## PR1: save any link — September 26, 2026
 
-Nothing here has run on a physical iPhone yet. Everything below ran on GitHub Actions `macos-26` runners with Xcode 26.6, because the session that wrote this PR had no Mac. [Run 5](https://github.com/gtfol/stash/actions/runs/36210844166) is the reference.
+Nothing here has run on a physical iPhone yet. Everything below ran on GitHub Actions `macos-26` runners with Xcode 26.6, because the session that wrote this PR had no Mac. [Run 8](https://github.com/gtfol/stash/actions/runs/36212958180) is the reference. Each run's `ios-screenshots` artifact has the full-size UI test screenshots and a freshly rendered icon.
 
 ### Automated checks
 
@@ -10,6 +10,7 @@ Nothing here has run on a physical iPhone yet. Everything below ran on GitHub Ac
 - `swift test`: 35 core tests passed on macOS, compiled in Swift 6 language mode with complete strict concurrency and no warnings.
 - `scripts/test-ios.sh`: the Debug simulator build and the unsigned Release device build succeeded with warnings treated as errors, including the share extension. **51 tests passed** on an iPhone 17 Pro simulator (iOS 26.5): the 35 core tests, 9 SwiftData store tests, 4 library-model tests, 1 preview-image test, and 2 UI tests.
 - `swift scripts/make-icon.swift` renders an icon matching the committed `AppIcon.png`: mean difference 0.5/255, same glyph bounds within 1 px.
+- Runs 6 and 7 failed in the UI test, which led to two fixes: typed backspaces in the search field were sometimes dropped, so the test clears search with the field's clear button; and the delete confirmation, anchored to its button, didn't appear, so deletes now confirm with an alert.
 
 ### Acceptance checks
 
@@ -31,7 +32,7 @@ Screenshots from the UI tests were reviewed at 1x: the dark library with the fir
 - Anything on a physical iPhone: signing, the App Group under a real team, sharing from Safari or other apps (including offline), the extension's memory and time budget, and how iOS presents the extension's card.
 - Real pages' details and previews beyond those two refusals. The parser was tested on fixtures shaped like Nature's markup.
 - The LinkPresentation title fallback. It needs the network and isn't covered by tests.
-- Colors in the screenshots, which were reduced to 24 colors for review. Error text is `#ef9696` in code.
+- Colors in the screenshots, which were reduced to 24 colors for review, including the alert's red **delete**. Error text is `#ef9696` in code.
 - VoiceOver, the largest text sizes, and smaller iPhones.
 
 ## Physical iPhone checklist
