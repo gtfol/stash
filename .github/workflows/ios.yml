@@ -1,0 +1,71 @@
+name: iPhone build and tests
+on:
+  push:
+    paths: ["apps/ios/**", ".github/workflows/ios.yml"]
+  workflow_dispatch:
+defaults:
+  run:
+    working-directory: apps/ios
+permissions:
+  contents: read
+concurrency:
+  group: ios-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  core:
+    runs-on: macos-26
+    timeout-minutes: 10
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_26.6.app/Contents/Developer
+    steps:
+      - uses: actions/checkout@v7
+      - name: Core unit tests on macOS
+        run: swift test
+  ios:
+    runs-on: macos-26
+    timeout-minutes: 30
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_26.6.app/Contents/Developer
+      STASH_RESULT_BUNDLE: TestResults.xcresult
+    steps:
+      - uses: actions/checkout@v7
+      - name: Verify generated Xcode project
+        run: |
+          python3 scripts/generate-project.py
+          git diff --exit-code -- Stash.xcodeproj Stash/Stash.entitlements StashShare/StashShare.entitlements
+      - name: Build simulator and device, test on iPhone simulator
+        run: scripts/test-ios.sh
+      - name: Export UI test screenshots
+        if: always()
+        run: |
+          mkdir -p Screenshots
+          if [ -d TestResults.xcresult ]; then xcrun xcresulttool export attachments --path TestResults.xcresult --output-path Screenshots; fi
+          swift scripts/make-icon.swift Screenshots/AppIcon-rendered.png
+      - name: Upload screenshots
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: ios-screenshots
+          path: apps/ios/Screenshots
+          if-no-files-found: ignore
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: ios-test-results
+          path: apps/ios/TestResults.xcresult
+          if-no-files-found: ignore
+      - name: Test summary
+        if: always()
+        run: |
+          [ -d TestResults.xcresult ] || exit 0
+          xcrun xcresulttool get test-results summary --path TestResults.xcresult --compact
+          xcrun xcresulttool get test-results tests --path TestResults.xcresult --compact | python3 -c '
+          import json, sys
+          def walk(node, suite=""):
+              if node.get("nodeType") == "Test Case":
+                  print(node.get("result"), suite + "/" + node.get("name", ""), node.get("duration", ""))
+              for child in node.get("children", []):
+                  walk(child, node.get("name", suite) if node.get("nodeType") == "Test Suite" else suite)
+          for node in json.load(sys.stdin).get("testNodes", []): walk(node)
+          '
