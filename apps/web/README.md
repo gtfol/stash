@@ -50,7 +50,7 @@ Sign-in works only on the address in `BETTER_AUTH_URL`. Preview deployments work
 ### 3. Vercel
 
 1. In Vercel, choose **Add New → Project** and import `gtfol/stash` into the gtfol team. Name the project `stash`.
-2. Set **Root Directory** to `apps/web`. The framework is detected as Next.js; leave the build and output settings as they are. `vercel.json` skips builds when a push doesn't change `apps/web`, so iPhone-only commits don't redeploy the site.
+2. Set **Root Directory** to `apps/web`. The framework is detected as Next.js; leave the build and output settings as they are. Under Settings → Functions, set the region to Portland (`pdx1`), next to the Oregon database.
 3. Under **Environment Variables**, add for Production. Mark the secrets as sensitive:
 
    | Variable | Value |
@@ -66,7 +66,7 @@ Sign-in works only on the address in `BETTER_AUTH_URL`. Preview deployments work
 4. Deploy, then add `stash.gtfol.dev` under **Settings → Domains** and follow Vercel's DNS instructions for gtfol.dev.
 5. Production deploys from `main`. Until this work is merged there, the branch gets preview deployments only.
 
-Changing a variable takes effect on the next deployment.
+Changing a variable takes effect on the next deployment. To apply one right away, redeploy the latest production deployment from Vercel's Deployments list.
 
 ### 4. Check the deployment
 

@@ -31,6 +31,6 @@ Screenshots from the browser tests were reviewed at desktop and phone widths, li
 
 - Google sign-in end to end. The browser tests sign in with a session made the way Better Auth makes them, not through Google.
 - The real Supabase project: its pooler, certificate, and latency from Vercel.
-- A Vercel deployment, the `stash.gtfol.dev` domain, and the build-skip rule in `vercel.json`.
+- Sync on the live deployment. The first production deploy built and served the guest library at `stash.gtfol.dev`. A `vercel.json` rule that skipped builds without `apps/web` changes also skipped redeploys after settings changes, so it was removed.
 - Real pages' details. This container's network doesn't reach other sites directly, so every fetch here came back refused, which the app showed as "site blocks previews". The parser was tested on fixtures.
 - Android's share sheet (installed web app), Safari, Firefox, screen readers, and very long libraries.
