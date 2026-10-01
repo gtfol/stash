@@ -15,3 +15,5 @@ The layout follows [capsule](https://github.com/gtfol/capsule) and [freewrite](h
 - Web: from `apps/web`, run `npm run lint`, `npm run typecheck`, `npm test`, `npm run build`, and `npm run test:e2e`. GitHub Actions runs them against Postgres 16 and keeps the browser tests' screenshots as an artifact.
 
 See the [iPhone README](apps/ios/README.md) and [verification](apps/ios/docs/verification.md), and the [web README](apps/web/README.md) for Supabase, Google, and Vercel setup and [its verification](apps/web/docs/verification.md).
+
+Picking up the project? Start with the [handoff](HANDOFF.md): current state, services, and what has not been done yet.
